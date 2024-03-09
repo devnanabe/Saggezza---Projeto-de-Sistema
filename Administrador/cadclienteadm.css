@@ -10,6 +10,7 @@
 body {
     font-weight: 500;
     background: white;
+    overflow-x: hidden;
 }
 
 .sidebar {
@@ -247,6 +248,7 @@ body {
 .container-form {
     background-color: transparent;
     border: none;
+    margin-top: -40px;
 }
 
 .tituloform {
@@ -303,7 +305,7 @@ input[type="submit"] {
     padding: 10px;
     margin-bottom: 10px;
     border: none;
-    font-size: 18px;
+    font-size: 16px;
     color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -353,4 +355,110 @@ input[type="tel"]::-webkit-outer-spin-button {
     input[type="submit"] {
         width: 100%; 
     }
+}
+
+.container-grafico {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid black;
+    margin-top: 20px;
+}
+
+.barra-pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-top: 20px;
+    right: 15px;
+    width: 400px;
+    height: 50px;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #053664;
+}
+
+.barra-pesquisa input[type="text"] {
+    width: 370px;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.barra-pesquisa button {
+    border: none;
+    background: none;
+    padding: 10px;
+    font-size: 20px;
+    margin-right: 5px;
+    color: #053664;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover {
+        transform: translateX(-3px);
+        color: #0D62B0;
+    }
+
+    &:active {
+        color: #053664;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .barra-pesquisa {
+        position: static;
+        margin-top: 20px;
+        justify-content: center;
+    }
+}
+
+.container-tabela {
+    overflow-x: auto;
+    margin-top: 90px;
+    justify-self: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.tabela {
+    width: 100%; 
+    border-collapse: collapse;
+    border-radius: 15px;
+    margin: auto; 
+}
+
+.tabela th,
+.tabela td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+    min-width: 150px;
+}
+
+.tabela th {
+    background-color: #3780C2;
+    color: #fff;
+}
+
+.tabela tbody tr:nth-child(even) {
+    background-color: #EFF7FF;
+}
+
+@media screen and (max-width: 600px) {
+    .tabela {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .tabela th,
+    .tabela td {
+        display: inline-block;
+        min-width: 150px; 
+    }
+
 }
