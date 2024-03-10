@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Cadastrar cliente</title>
+    <title>Cadastrar máquina</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="cadclienteadm.css" media="screen"/>
+    <link rel="stylesheet" href="cadmaquina.css" media="screen"/>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
 </head>
@@ -23,7 +23,7 @@
             <ul>
                 <!--Cadastrar clientes-->
                 <li>
-                    <a href="#" id="cadCliente">
+                    <a href="#">
                         <i class="fa-solid fa-users" id="cadcliente"></i>
                         <span class="item-menu">Cadastrar cliente</span>
                     </a>
@@ -31,7 +31,7 @@
                 </li>
                 <!--Cadastrar máquinas-->
                 <li>
-                    <a href="#">
+                    <a href="#" id="cadMaquina">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-menu">Cadastrar máquina</span>
                     </a>
@@ -102,24 +102,39 @@
             </div>
             <br>
             <div class="container-form">
-                <h2 class="tituloform">Cadastrar cliente</h2>
+                <h2 class="tituloform">Cadastrar máquina</h2>
                 <form action="" class="formulario">
                     <div class="left">
-                        <label class="lbtxt" for="nomecliente">Cliente:</label>
-                        <input type="text" placeholder="Nome do cliente" id="nomecliente">
+                        <label class="lbtxt" for="cliente-sel">Cliente:</label>
+                        <select id="cliente-sel">
+                            <option value="Cli1">Cliente 1</option>
+                            <option value=Cli2">Cliente 2</option>
+                        </select>
                         <br>
-                        <label class="lbtxt" for="responsavelcad">Responsável:</label>
-                        <select id="responsavelcad">
-                            <option value="Adm1">Administrador 1</option>
-                            <option value="Op1">Operacional 1</option>
+                        <label class="lbtxt" for="equipamento">Equipamento:</label>
+                        <select id="equipamento">
+                            <option value="Equip1">Equipamento 1</option>
+                            <option value="Equip2">Equipamento 2</option>
+                        </select>
+                        <br>
+                        <label class="lbtxt" for="tipomaq">Tipo:</label>
+                        <select id="tipomaq">
+                            <option value="Tipo1">Tipo 1</option>
+                            <option value="Tipo2">Tipo 2</option>
                         </select>
                     </div>
                     <div class="right">
-                        <label class="lbtxt" for="telefonecliente">Telefone:</label>
-                        <input type="number" id="telefonecliente" placeholder="(00)00000-0000">
+                        <label class="lbtxt" for="tipo-lub">Tipo de lubrificante:</label>
+                        <select id="tipo-lub">
+                            <option value="Lub1">Lubrificante 1</option>
+                            <option value="Lub2">Lubrificante 2</option>
+                        </select>
                         <br>
-                        <label class="lbtxt" for="emailcliente">Email:</label>
-                        <input type="email" id="emailcliente" placeholder="cliente@email.com">
+                        <label class="lbtxt" for="fabricante">Fabricante:</label>
+                        <select id="fabricante">
+                            <option value="Fab1">Fabricante 1</option>
+                            <option value="Fab2">Fabricante 2</option>
+                        </select>
                         <br>
                         <div class="btn-group">
                             <input type="reset" value="Limpar">
@@ -139,33 +154,33 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>EMAIL</th>
+                                <th>TIPO</th>
+                                <th>TIPO LUBRIFICANTE</th>
+                                <th>EQUIPAMENTO</th>
                                 <th>CLIENTE</th>
-                                <th>TELEFONE</th>
-                                <th>RESPONSÁVEL</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>cliente1@email.com</td>
+                                <td>Tipo 1</td>
+                                <td>Tipo Lub 1</td>
+                                <td>Equipamento 1</td>
                                 <td>Cliente 1</td>
-                                <td>(11) 1234-5678</td>
-                                <td>Administrador 1</td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>cliente2@email.com</td>
+                                <td>Tipo 2</td>
+                                <td>Tipo Lub 2</td>
+                                <td>Equipamento 2</td>
                                 <td>Cliente 2</td>
-                                <td>(22) 2345-6789</td>
-                                <td>Operacional 1</td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>cliente3@email.com</td>
+                                <td>Tipo 3</td>
+                                <td>Tipo Lub 3</td>
+                                <td>Equipamento 3</td>
                                 <td>Cliente 3</td>
-                                <td>(33) 3456-7890</td>
-                                <td>Administrador 1</td>
                             </tr>
                         </tbody>
                     </table>
