@@ -17,7 +17,7 @@ body {
     top: 0;
     left: 0;
     max-height: 200vh;
-    height: 120vh;
+    height: 115vh;
     width: 300px;
     background: linear-gradient(to bottom, #01203C, #0D6FCA);
     padding: .4rem .8rem;
@@ -146,7 +146,7 @@ body {
 }
 
 /* Pra o usuário não ser capaz de clicar na página que já está */
-#reportSinal {
+#cadCliente {
     pointer-events: none; 
     background-color: #0D62B0; 
 }
@@ -287,7 +287,10 @@ body {
     margin-top: 10px;
 }
 
-input[type="datetime-local"] {
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
     width: 70%;
     height: 40px;
     padding: 10px;
@@ -299,59 +302,10 @@ input[type="datetime-local"] {
     box-sizing: border-box;
 }
 
-#sinalizacao {
-    width: 70%;
-    height: 180px;
-    font-size: 16px;
-    padding: 10px;
-    line-height: 1.5;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    resize: none; 
-}
-
-.importar-img {
+.btn-group {
     display: flex;
-    align-items: center;
-    width: 70%;
-    height: 40px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    font-size: 16px;
-    margin-top: 5px;
-    box-sizing: border-box;
-}
-
-.txt-img {
-    width: 70%;
-    font-size: 16px;
-    color: black; 
-}
-
-#btn-importar {
-    width: 30%;
-    height: 100%;
-    background-color: transparent; 
-    color: #09457C; 
-    font-weight: 800;
-    font-size: 16px;
-    text-align: end;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-
-    &:hover {
-        color: #053664; 
-        transform: translateX(-3px);
-    }
-
-    &:active {
-        color: #032D50; 
-    }
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .container-form select {
@@ -363,12 +317,6 @@ input[type="datetime-local"] {
     width: 70%; 
     margin-bottom: 10px; 
     font-size: 16px; 
-}
-
-.btn-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
 }
 
 input[type="reset"],
@@ -396,30 +344,29 @@ input[type="submit"] {
     }
 }
 
+/* Tirando as setinhas do campo de texto de telefone */
+#telefonecliente::-webkit-outer-spin-button,
+#telefonecliente::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 @media screen and (max-width: 600px) {
     .sidebar {
-        height: 200vh;
+        height: 190vh;
     }
 
     .formulario {
         flex-direction: column;
     }
- 
+
     .container-form select {
         width: 100%;
     }
 
-
-    input[type="datetime-local"] {
-        width: 100%;
-    }
-
-    #sinalizacao {
-        width: 100%;
-    }
-
-    .importar-img {
+    input[type="text"],
+    input[type="number"],
+    input[type="email"] {
         width: 100%;
     }
 
@@ -463,7 +410,7 @@ input[type="submit"] {
 .barra-pesquisa input[type="text"] {
     width: 335px;
     padding: 10px 15px;
-    margin: auto;
+    margin-top: 10px;
     border: none;
     background: transparent;
     outline: none;

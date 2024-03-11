@@ -330,12 +330,6 @@ input[type="submit"] {
     }
 }
 
-/* Tirando as setinhas do campo de texto de telefone */
-#telefonecliente::-webkit-outer-spin-button,
-#telefonecliente::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
 
 @media screen and (max-width: 600px) {
     .sidebar {

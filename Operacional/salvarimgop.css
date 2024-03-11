@@ -17,7 +17,7 @@ body {
     top: 0;
     left: 0;
     max-height: 200vh;
-    height: 120vh;
+    height: 115vh;
     width: 300px;
     background: linear-gradient(to bottom, #01203C, #0D6FCA);
     padding: .4rem .8rem;
@@ -146,7 +146,7 @@ body {
 }
 
 /* Pra o usuário não ser capaz de clicar na página que já está */
-#reportSinal {
+#salvarImg {
     pointer-events: none; 
     background-color: #0D62B0; 
 }
@@ -287,6 +287,7 @@ body {
     margin-top: 10px;
 }
 
+select, 
 input[type="datetime-local"] {
     width: 70%;
     height: 40px;
@@ -297,17 +298,6 @@ input[type="datetime-local"] {
     font-size: 16px;
     margin-top: 5px;
     box-sizing: border-box;
-}
-
-#sinalizacao {
-    width: 70%;
-    height: 180px;
-    font-size: 16px;
-    padding: 10px;
-    line-height: 1.5;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    resize: none; 
 }
 
 .importar-img {
@@ -399,7 +389,7 @@ input[type="submit"] {
 
 @media screen and (max-width: 600px) {
     .sidebar {
-        height: 200vh;
+        height: 190vh;
     }
 
     .formulario {
@@ -410,12 +400,8 @@ input[type="submit"] {
         width: 100%;
     }
 
-
+    input[type="number"], 
     input[type="datetime-local"] {
-        width: 100%;
-    }
-
-    #sinalizacao {
         width: 100%;
     }
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Administrador</title>
+    <title>Cadastrar fabricante</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="homeadmin.css" media="screen"/>
+    <link rel="stylesheet" href="cadfabop.css" media="screen"/>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
 </head>
@@ -23,15 +23,15 @@
             <ul>
                 <!--Cadastrar clientes-->
                 <li>
-                    <a href="cadclienteadm.html">
-                        <i class="fa-solid fa-users" id="cadcliente"></i>
+                    <a href="cadclienteop.html">
+                        <i class="fa-solid fa-users"></i>
                         <span class="item-menu">Cadastrar cliente</span>
                     </a>
                     <span class="tooltip">Cadastrar cliente</span>
                 </li>
                 <!--Cadastrar máquinas-->
                 <li>
-                    <a href="cadmaquina.html">
+                    <a href="cadmaquinaop.html">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-menu">Cadastrar máquina</span>
                     </a>
@@ -39,7 +39,7 @@
                 </li>
                 <!--Cadastrar equipamentos-->
                 <li>
-                    <a href="cadequipadm.html">
+                    <a href="cadequipop.html">
                         <i class="fa-solid fa-hammer"></i>
                         <span class="item-menu">Cadastrar equipamento</span>
                     </a>
@@ -47,7 +47,7 @@
                 </li>
                 <!--Cadastrar fabricantes-->
                 <li>
-                    <a href="cadfabadm.html">
+                    <a href="#" id="cadFab">
                         <i class="fa-solid fa-industry"></i>
                         <span class="item-menu">Cadastrar fabricante</span>
                     </a>
@@ -55,7 +55,7 @@
                 </li>
                 <!--Cadastrar lubrificantes-->
                 <li>
-                    <a href="cadlubadm.html">
+                    <a href="cadlubop.html">
                         <i class="fa-solid fa-oil-can"></i>
                         <span class="item-menu">Cadastrar lubrificante</span>
                     </a>
@@ -63,7 +63,7 @@
                 </li>
                 <!--Lançar apontamentos-->
                 <li>
-                    <a href="lancarapontadm.html">
+                    <a href="lancarapontop.html">
                         <i class="fa-solid fa-pen"></i>
                         <span class="item-menu">Lançar apontamento</span>
                     </a>
@@ -71,7 +71,7 @@
                 </li>
                 <!--Salvar imagens-->
                 <li>
-                    <a href="salvarimgadm.html">
+                    <a href="salvarimgop.html">
                         <i class='bx bxs-image-add'></i>
                         <span class="item-menu">Salvar imagem</span>
                     </a>
@@ -79,19 +79,11 @@
                 </li>
                 <!--Reportar sinalizações-->
                 <li>
-                    <a href="reportarsinalizacaoadm.html">
+                    <a href="reportarsinalizacaoop.html">
                         <i class="fa-solid fa-flag"></i>
                         <span class="item-menu">Reportar sinalizações</span>
                     </a>
                     <span class="tooltip">Reportar sinalizações</span>
-                </li>
-                <!--Cadastrar usuários-->
-                <li>
-                    <a href="cadusuarioadm.html">
-                        <i class="fa-solid fa-user-plus"></i>
-                        <span class="item-menu">Cadastrar usuário</span>
-                    </a>
-                    <span class="tooltip">Cadastrar usuário</span>
                 </li>
             </ul>
         </div>
@@ -101,11 +93,62 @@
                 <button id="logout"><i class="fa-solid fa-right-from-bracket"></i>  Sair</button>
             </div>
             <br>
-            <div class="container">
-                <div class="fundohome">
-                    <img id="imgfundo" src="../Imagens/logo-com-titulo.png" alt="Logo com título">
-                </div>
+            <div class="container-form">
+                <h2 class="tituloform">Cadastrar fabricante</h2>
+                <form action="" class="formulario">
+                    <div class="left">
+                        <label class="lbtxt" for="nome-fab">Fabricante:</label>
+                        <br>
+                        <input type="text" id="nome-fab" placeholder="Nome do fabricante">
+                        <br>
+                    </div>
+                    <div class="right">
+                        <br>
+                        <div class="btn-group">
+                            <input type="reset" value="Limpar">
+                            <input type="submit" id="btn-salvar" value="Salvar">
+                        </div>
+                    </div>
+                </form>
             </div>
+                <br>
+                <div class="barra-pesquisa">
+                    <input type="text" placeholder="Pesquisar">
+                    <button id="btn-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <br><br>
+                <div class="container-tabela">
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOME DO FABRICANTE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Fabricante 1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Fabricante 2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Fabricante 3</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Fabricante 4</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Fabricante 5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
         </div>
 </body>
 <script>
