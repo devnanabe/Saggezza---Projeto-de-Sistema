@@ -17,7 +17,7 @@ body {
     top: 0;
     left: 0;
     max-height: 200vh;
-    height: 110vh;
+    height: 115vh;
     width: 300px;
     background: linear-gradient(to bottom, #01203C, #0D6FCA);
     padding: .4rem .8rem;
@@ -287,11 +287,8 @@ body {
     margin-top: 10px;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="email"],
 select {
-    width: 100%;
+    width: 70%;
     height: 40px;
     padding: 10px;
     margin-bottom: 10px;
@@ -300,6 +297,17 @@ select {
     font-size: 16px;
     margin-top: 5px;
     box-sizing: border-box;
+}
+
+.container-form select {
+    background-color: #09457C; 
+    color: white; 
+    border: none; 
+    border-radius: 15px; 
+    padding: 10px; 
+    width: 70%; 
+    margin-bottom: 10px; 
+    font-size: 16px; 
 }
 
 .btn-group {
@@ -314,8 +322,8 @@ input[type="submit"] {
     padding: 10px;
     margin-bottom: 10px;
     border: none;
-    height: 40px;
-    font-size: 16px;
+    height: 35px;
+    font-size: 14px;
     color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -333,12 +341,6 @@ input[type="submit"] {
     }
 }
 
-/* Tirando as setinhas do campo de texto de telefone */
-#telefonecliente::-webkit-outer-spin-button,
-#telefonecliente::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
 
 @media screen and (max-width: 600px) {
     .sidebar {
@@ -347,6 +349,10 @@ input[type="submit"] {
 
     .formulario {
         flex-direction: column;
+    }
+
+    .container-form select {
+        width: 100%;
     }
 
     .left,
@@ -389,7 +395,7 @@ input[type="submit"] {
 .barra-pesquisa input[type="text"] {
     width: 335px;
     padding: 10px 15px;
-    margin-top: 10px;
+    margin: auto;
     border: none;
     background: transparent;
     outline: none;

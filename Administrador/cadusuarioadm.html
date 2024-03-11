@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Cadastrar máquina</title>
+    <title>Cadastrar usuário</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="cadmaquina.css" media="screen"/>
+    <link rel="stylesheet" href="cadusuarioadm.css" media="screen"/>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
 </head>
@@ -31,7 +31,7 @@
                 </li>
                 <!--Cadastrar máquinas-->
                 <li>
-                    <a href="#" id="cadMaquina">
+                    <a href="cadmaquina.html">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-menu">Cadastrar máquina</span>
                     </a>
@@ -87,7 +87,7 @@
                 </li>
                 <!--Cadastrar usuários-->
                 <li>
-                    <a href="cadusuarioadm.html">
+                    <a href="#" id="cadUsuario">
                         <i class="fa-solid fa-user-plus"></i>
                         <span class="item-menu">Cadastrar usuário</span>
                     </a>
@@ -102,43 +102,44 @@
             </div>
             <br>
             <div class="container-form">
-                <h2 class="tituloform">Cadastrar máquina</h2>
+                <h2 class="tituloform">Cadastrar usuário</h2>
                 <form action="" class="formulario">
                     <div class="left">
-                        <label class="lbtxt" for="cliente-sel">Cliente:</label>
+                        <label class="lbtxt" for="username">Usuário:</label>
                         <br>
-                        <select id="cliente-sel">
-                            <option value="Cli1">Cliente 1</option>
-                            <option value=Cli2">Cliente 2</option>
-                        </select>
+                        <input type="text" id="username" placeholder="Nome do usuário">
                         <br>
-                        <label class="lbtxt" for="equipamento">Equipamento:</label>
+                        <label class="lbtxt" for="senha">Senha:</label>
                         <br>
-                        <select id="equipamento">
-                            <option value="Equip1">Equipamento 1</option>
-                            <option value="Equip2">Equipamento 2</option>
-                        </select>
+                        <input type="text" id="senha" placeholder="Senha do usuário">
                         <br>
-                        <label class="lbtxt" for="tipomaq">Tipo:</label>
+                        <label class="lbtxt" for="telefone">Telefone:</label>
                         <br>
-                        <select id="tipomaq">
-                            <option value="Tipo1">Tipo 1</option>
-                            <option value="Tipo2">Tipo 2</option>
-                        </select>
+                        <input type="number" id="telefone" placeholder="(00)00000-0000">
+                        <br>
+                        <div class="btn-group">
+                            <button class="btn-form" id="env-senha">Enviar senha</button>
+                            <button class="btn-form" id="excluir">Excluir</button>
+                            <button class="btn-form" id="atualizar">Atualizar</button>
+                        </div>
                     </div>
                     <div class="right">
-                        <label class="lbtxt" for="tipo-lub">Tipo de lubrificante:</label>
+                        <label class="lbtxt" for="email">Email:</label>
                         <br>
-                        <select id="tipo-lub">
-                            <option value="Lub1">Lubrificante 1</option>
-                            <option value="Lub2">Lubrificante 2</option>
+                        <input type="email" id="email" placeholder="usuario@email.com">
+                        <br>
+                        <label class="lbtxt" for="tipo-usuario">Tipo:</label>
+                        <br>
+                        <select id="tipo-usuario">
+                            <option value="Tipo1">Tipo 1</option>
+                            <option value=Tipo2">Tipo 2</option>
                         </select>
                         <br>
-                        <label class="lbtxt" for="fabricante">Fabricante:</label>
+                        <label class="lbtxt" for="cliente">Cliente:</label>
                         <br>
-                        <select id="fabricante">
-                            <option value="Fab1">Fabricante 1</option>
-                            <option value="Fab2">Fabricante 2</option>
+                        <select id="tipo-usuario">
+                            <option value="Cli1">Cliente 1</option>
+                            <option value=Cli2">Cliente 2</option>
                         </select>
                         <br>
                         <div class="btn-group">
@@ -159,33 +160,41 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>USUARIO</th>
+                                <th>SENHA</th>
+                                <th>TELEFONE</th>
+                                <th>EMAIL</th>
                                 <th>TIPO</th>
-                                <th>TIPO LUBRIFICANTE</th>
-                                <th>EQUIPAMENTO</th>
-                                <th>CLIENTE</th>
+                                <th>DATA</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
+                                <td>Usuario 1</td>
+                                <td>********</td>
+                                <td>(00)00000-0000</td>
+                                <td>usuario@email.com</td>
                                 <td>Tipo 1</td>
-                                <td>Tipo Lub 1</td>
-                                <td>Equipamento 1</td>
-                                <td>Cliente 1</td>
+                                <td>00/00/00 00:00</td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Tipo 2</td>
-                                <td>Tipo Lub 2</td>
-                                <td>Equipamento 2</td>
-                                <td>Cliente 2</td>
+                                <td>Usuario 2</td>
+                                <td>********</td>
+                                <td>(00)00000-0000</td>
+                                <td>usuario@email.com</td>
+                                <td>Tipo 1</td>
+                                <td>00/00/00 00:00</td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Tipo 3</td>
-                                <td>Tipo Lub 3</td>
-                                <td>Equipamento 3</td>
-                                <td>Cliente 3</td>
+                                <td>Usuario 3</td>
+                                <td>********</td>
+                                <td>(00)00000-0000</td>
+                                <td>usuario@email.com</td>
+                                <td>Tipo 2</td>
+                                <td>00/00/00 00:00</td>
                             </tr>
                         </tbody>
                     </table>

@@ -146,7 +146,7 @@ body {
 }
 
 /* Pra o usuário não ser capaz de clicar na página que já está */
-#cadCliente {
+#salvarImg {
     pointer-events: none; 
     background-color: #0D62B0; 
 }
@@ -287,10 +287,8 @@ body {
     margin-top: 10px;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="email"],
-select {
+select, 
+input[type="datetime-local"] {
     width: 70%;
     height: 40px;
     padding: 10px;
@@ -302,10 +300,48 @@ select {
     box-sizing: border-box;
 }
 
-.btn-group {
+.importar-img {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    width: 70%;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.txt-img {
+    width: 70%;
+    font-size: 16px;
+    color: black; 
+}
+
+#btn-importar {
+    width: 30%;
+    height: 100%;
+    background-color: transparent; 
+    color: #09457C; 
+    font-weight: 800;
+    font-size: 16px;
+    text-align: end;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+
+    &:hover {
+        color: #053664; 
+        transform: translateX(-3px);
+    }
+
+    &:active {
+        color: #032D50; 
+    }
 }
 
 .container-form select {
@@ -317,6 +353,12 @@ select {
     width: 70%; 
     margin-bottom: 10px; 
     font-size: 16px; 
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 input[type="reset"],
@@ -344,12 +386,6 @@ input[type="submit"] {
     }
 }
 
-/* Tirando as setinhas do campo de texto de telefone */
-#telefonecliente::-webkit-outer-spin-button,
-#telefonecliente::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
 
 @media screen and (max-width: 600px) {
     .sidebar {
@@ -359,14 +395,17 @@ input[type="submit"] {
     .formulario {
         flex-direction: column;
     }
-
+ 
     .container-form select {
         width: 100%;
     }
 
-    input[type="text"],
-    input[type="number"],
-    input[type="email"] {
+    input[type="number"], 
+    input[type="datetime-local"] {
+        width: 100%;
+    }
+
+    .importar-img {
         width: 100%;
     }
 
@@ -410,7 +449,7 @@ input[type="submit"] {
 .barra-pesquisa input[type="text"] {
     width: 335px;
     padding: 10px 15px;
-    margin-top: 10px;
+    margin: auto;
     border: none;
     background: transparent;
     outline: none;

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Cadastrar máquina</title>
+    <title>Salvar imagem</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="cadmaquina.css" media="screen"/>
+    <link rel="stylesheet" href="salvarimgadm.css" media="screen"/>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
 </head>
@@ -31,7 +31,7 @@
                 </li>
                 <!--Cadastrar máquinas-->
                 <li>
-                    <a href="#" id="cadMaquina">
+                    <a href="cadmaquina.html">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-menu">Cadastrar máquina</span>
                     </a>
@@ -71,7 +71,7 @@
                 </li>
                 <!--Salvar imagens-->
                 <li>
-                    <a href="salvarimgadm.html">
+                    <a href="#" id="salvarImg">
                         <i class='bx bxs-image-add'></i>
                         <span class="item-menu">Salvar imagem</span>
                     </a>
@@ -102,7 +102,7 @@
             </div>
             <br>
             <div class="container-form">
-                <h2 class="tituloform">Cadastrar máquina</h2>
+                <h2 class="tituloform">Salvar imagem</h2>
                 <form action="" class="formulario">
                     <div class="left">
                         <label class="lbtxt" for="cliente-sel">Cliente:</label>
@@ -112,34 +112,25 @@
                             <option value=Cli2">Cliente 2</option>
                         </select>
                         <br>
-                        <label class="lbtxt" for="equipamento">Equipamento:</label>
+                        <label class="lbtxt" for="equip-sel">Equipamento:</label>
                         <br>
-                        <select id="equipamento">
-                            <option value="Equip1">Equipamento 1</option>
-                            <option value="Equip2">Equipamento 2</option>
+                        <select id="equip-sel">
+                            <option value="Cli1">Equipamento 1</option>
+                            <option value=Cli2">Equipamento 2</option>
                         </select>
                         <br>
-                        <label class="lbtxt" for="tipomaq">Tipo:</label>
-                        <br>
-                        <select id="tipomaq">
-                            <option value="Tipo1">Tipo 1</option>
-                            <option value="Tipo2">Tipo 2</option>
-                        </select>
                     </div>
                     <div class="right">
-                        <label class="lbtxt" for="tipo-lub">Tipo de lubrificante:</label>
+                        <label class="lbtxt" for="valor">Upload do documento:</label>
                         <br>
-                        <select id="tipo-lub">
-                            <option value="Lub1">Lubrificante 1</option>
-                            <option value="Lub2">Lubrificante 2</option>
-                        </select>
+                        <div class="importar-img">
+                            <label class="txt-img">Nome do arquivo</label>
+                            <button id="btn-importar">Browse</button>
+                        </div>
                         <br>
-                        <label class="lbtxt" for="fabricante">Fabricante:</label>
+                        <label class="lbtxt" for="data">Data/Hora:</label>
                         <br>
-                        <select id="fabricante">
-                            <option value="Fab1">Fabricante 1</option>
-                            <option value="Fab2">Fabricante 2</option>
-                        </select>
+                        <input type="datetime-local" id="data">
                         <br>
                         <div class="btn-group">
                             <input type="reset" value="Limpar">
@@ -159,33 +150,47 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>TIPO</th>
-                                <th>TIPO LUBRIFICANTE</th>
-                                <th>EQUIPAMENTO</th>
                                 <th>CLIENTE</th>
+                                <th>EQUIPAMENTO</th>
+                                <th>DATA</th>
+                                <th>ARQUIVO</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Tipo 1</td>
-                                <td>Tipo Lub 1</td>
-                                <td>Equipamento 1</td>
                                 <td>Cliente 1</td>
+                                <td>Equipamento 1</td>
+                                <td>00/00/00 00:00</td>
+                                <td>path/arquivo/...</td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Tipo 2</td>
-                                <td>Tipo Lub 2</td>
-                                <td>Equipamento 2</td>
                                 <td>Cliente 2</td>
+                                <td>Equipamento 2</td>
+                                <td>00/00/00 00:00</td>
+                                <td>path/arquivo/...</td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Tipo 3</td>
-                                <td>Tipo Lub 3</td>
-                                <td>Equipamento 3</td>
                                 <td>Cliente 3</td>
+                                <td>Equipamento 3</td>
+                                <td>00/00/00 00:00</td>
+                                <td>path/arquivo/...</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Cliente 4</td>
+                                <td>Equipamento 4</td>
+                                <td>00/00/00 00:00</td>
+                                <td>path/arquivo/...</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Cliente 5</td>
+                                <td>Equipamento 5</td>
+                                <td>00/00/00 00:00</td>
+                                <td>path/arquivo/...</td>
                             </tr>
                         </tbody>
                     </table>
