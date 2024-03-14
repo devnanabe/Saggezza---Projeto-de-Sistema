@@ -25,55 +25,55 @@
             </div>
             <ul class="lista">
                 <li class="item-menu">
-                    <a href="cadclienteadm.html">
+                    <a href="cadclienteadm.php">
                         <i class="fa-solid fa-users"></i>
                         <span class="nome-item"">Cadastrar cliente</span>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="cadmaquina.html">
+                    <a href="cadmaquina.php">
                         <i class="fa-solid fa-gear"></i>
                         <span class="nome-item">Cadastrar máquina</span>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="cadequipadm.html">
+                    <a href="cadequipadm.php">
                         <i class="fa-solid fa-hammer"></i>
                         <span class="nome-item">Cadastrar equipamento</span>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="cadfabadm.html">
+                    <a href="cadfabadm.php">
                         <i class="fa-solid fa-industry"></i>
                         <span class="nome-item">Cadastrar fabricante</span>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="cadlubadm.html">
+                    <a href="cadlubadm.php">
                         <i class="fa-solid fa-oil-can"></i>
                         <span class="nome-item">Cadastrar lubrificante</span>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="cadusuarioadm.html">
+                    <a href="cadusuarioadm.php">
                         <i class="fa-solid fa-user-plus"></i>
                         <span class="nome-item">Cadastrar usuário</span>
                     </a>
                 </li>
                 <li class="item-menu active">
-                    <a href="lancarapontadm.html">
+                    <a href="#">
                         <i class="fa-solid fa-pen"></i>
                         <span class="nome-item">Lançar apontamento</span>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="salvarimgadm.html">
+                    <a href="salvarimgadm.php">
                         <i class='bx bxs-image-add'></i>
                         <span class="nome-item">Salvar imagem</span>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="reportarsinalizacaoadm.html">
+                    <a href="reportarsinalizacaoadm.php">
                         <i class="fa-solid fa-flag"></i>
                         <span class="nome-item">Reportar sinalizações</span>
                     </a>
