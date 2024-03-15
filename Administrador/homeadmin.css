@@ -98,7 +98,7 @@ body {
 }
 
 .sidebar .logo .nomelogo {
-    font-size: 18px;
+    font-size: 26px;
     font-weight: 600;
     color: #ffff;
     pointer-events: none;
@@ -202,27 +202,10 @@ body {
     left: 80px; /* Recuo do menu quando está recolhido */
     width: calc(100% - 80px); /* Largura da tela menos o recuo do menu quando está recolhido */
 }
-
-/* ------ IMAGEM DE FUNDO ------- */
-
-/*
-.fundohome {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    display: table;
-    width: 50%; 
-    height: 50%; 
+/* Botão adicionado por Jonatas*/
+.btn-white {
+    background: transparent;
+    text-decoration: none;
+    color: rgb(255, 255, 255); 
 }
 
-#imgfundo {
-    display: block;
-    width: 100%;
-    height: auto;
-    opacity: 0.7; 
-}
-
-*/

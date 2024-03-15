@@ -98,7 +98,7 @@ body {
 }
 
 .sidebar .logo .nomelogo {
-    font-size: 18px;
+    font-size: 26px;
     font-weight: 600;
     color: #ffff;
     pointer-events: none;
@@ -340,6 +340,11 @@ input[type="submit"],
     input[type="submit"] {
         width: 100%; 
     }
+}
+.btn-white {
+    background: transparent;
+    text-decoration: none;
+    color: rgb(255, 255, 255); 
 }
 
 /* ------- TABELA E BARRA DE PESQUISA ------- */

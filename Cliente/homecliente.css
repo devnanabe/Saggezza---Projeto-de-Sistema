@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Libre Franklin", sans-serif;
+}
+
+body {
+    font-weight: 500;
+    background: white;
+}
+
+/* ----------- NAVBAR --------- */
+
+.menu-bar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: #0B4983;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    padding: 0 20px; 
+}
+
+.logo {
+    display: flex; 
+    align-items: center; 
+}
+
+.img-logo {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px; 
+}
+
+.nome-logo {
+    font-size: 26px;
+    color: white; 
+    display: inline-block; 
+    max-width: 150px; 
+    font-weight: 600;
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+}
+
+.user-info {
+    display: flex; 
+    align-items: center; 
+}
+
+#nome-usuario {
+    color: white; 
+    margin-right: 20px; 
+    font-size: 14px;
+}
+
+#logout {
+    width: 70px;
+    height: 35px;
+    color: white; 
+    font-weight: 600;
+    text-decoration: none; 
+    margin-right: 10px;
+    background: #2F8EE5;
+    border-radius: 30px;
+    text-align: center;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: 0 0.3rem rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        background: #5BABF4;
+        transform: translateX(3px);
+    }
+}
+
+.btn-white {
+    text-decoration: none;
+    color: white;
+}
+
+/* ------- GRÁFICO E FILTROS -------- */
+
+.container-grafico {
+    margin-top: 80px; 
+    width: 100%;
+}
+
+.filtros {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+}
+
+.filtro-txt {
+    font-weight: 600;
+    font-size: 16px;
+    color: #0B4983;
+    margin-right: 10px; 
+    margin-left: 5px;
+}
+
+select {
+    min-width: 300px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 16px;
+    padding: 5px;
+}
+
+#equipamento,
+#dados {
+    margin-right: 20px; 
+}
+
+
+@media (max-width: 767px) {
+    .filtros {
+        flex-direction: column; 
+    }
+
+    .filtro-txt {
+        margin-bottom: 10px; 
+    }
+
+    #equipamento,
+    #dados {
+        margin-bottom: 20px; 
+        margin-right: 0; 
+    }
+}
+
+.grafico {
+    width: 95%;
+    margin: auto;
+    min-height: 350px;
+    background: #EFF7FF; 
+    border-radius: 15px; 
+    margin-top: 20px; 
+    border: 1px solid #0B4983;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 2%;
+}
+
+.btn-baixar {
+    background-color: #09457C;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    width: auto;
+    height: 30px;
+    padding: 0 10px;
+    margin-left: 10px;
+    max-width: 90px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: 0 0.3rem rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        background: #0D62B0;
+        transform: translateX(3px);
+    }
+
+    &:active {
+        background: #053664;
+    }
+}
+
+@media (max-width: 767px) {
+    .btn-baixar {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* ------- TABELA -------- */
+
+.container-tabela {
+    width: 100%;
+    max-height: 400px;
+    margin: auto;
+    text-align: center;
+    overflow: auto; 
+    margin-bottom: 20px;
+}
+
+.tabela {
+    width: 95%;
+    border-collapse: collapse;
+    margin-top: 10rem;
+    border-radius: 15px;
+    margin: auto; 
+}
+
+tabela th,
+.tabela td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+    min-width: 150px;
+}
+
+.tabela th {
+    background-color: #09457C;
+    color: #fff;
+}
+
+.tabela tbody tr:nth-child(even) {
+    background-color: #EFF7FF;
+}
+
+@media screen and (max-width: 600px) {
+    .container-tabela {
+        width: 95%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    .tabela thead {
+        display: none;
+    }
+
+    .tabela {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tabela, .tabela tbody, .tabela tr, .tabela td {
+        display: block;
+        width: 100%;
+    }
+}
