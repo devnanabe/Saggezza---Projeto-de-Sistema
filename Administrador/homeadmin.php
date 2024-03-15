@@ -102,6 +102,7 @@
 
     <div class="conteudo-principal">
         <br><br><br>
+        <img src="../Imagens/logo-saggezza-titulo.png" alt="Logo Saggezza" class="img-fundo">
     </div>
 </body>
 <script>

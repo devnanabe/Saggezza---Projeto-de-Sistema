@@ -186,22 +186,28 @@ body {
 }
 
 /* ------ CONTEÚDO PRINCIPAL ------ */
+
 .conteudo-principal {
     position: relative;
-    background-color: #fff;
-    top: 70px; /* Altura do cabeçalho */
+    background: white;
+    top: 70px; 
+    min-height: 90vh;
     transition: all 0.3s ease;
     padding: 1rem;
-    width: calc(100% - 300px); /* Largura da tela menos a largura do menu */
-    left: 300px; /* Recuo do menu */
+    width: calc(100% - 300px); 
+    left: 300px; 
     z-index: 100;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
 }
 
 .conteudo-principal.active {
     top: 70px;
-    left: 80px; /* Recuo do menu quando está recolhido */
-    width: calc(100% - 80px); /* Largura da tela menos o recuo do menu quando está recolhido */
+    left: 80px; 
+    width: calc(100% - 80px); 
 }
+
 /* Botão adicionado por Jonatas*/
 .btn-white {
     background: transparent;
@@ -209,3 +215,7 @@ body {
     color: rgb(255, 255, 255); 
 }
 
+.img-fundo {
+    max-width: 100%; 
+    opacity: 0.5; 
+}
