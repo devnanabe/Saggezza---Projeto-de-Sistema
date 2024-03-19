@@ -16,6 +16,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/png" href="../Imagens/logo-saggezza.png">
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../Js/cadusuarioadm.js"></script>
 </head>
 <body>
     <header>
@@ -103,113 +105,92 @@
     <div class="conteudo-principal">
         <div class="container-form">
             <h2 class="tituloform">Cadastrar usuário</h2>
-            <form action="" class="formulario">
+            <form method="POST" action="" id="formCadastroCliente" class="formulario">
                 <div class="left">
                     <label class="lbtxt" for="username">Usuário:</label>
                     <br>
-                    <input type="text" id="username" placeholder="Nome do usuário">
-                    <br>
-                    <label class="lbtxt" for="senha">Senha:</label>
-                    <br>
-                    <input type="text" id="senha" placeholder="Senha do usuário">
+                    <input type="text" id="username" name="username" placeholder="Nome do usuário">
                     <br>
                     <label class="lbtxt" for="telefone">Telefone:</label>
                     <br>
-                    <input type="number" id="telefone" placeholder="(00)00000-0000">
+                    <input type="number" id="telefone" name="telefone" placeholder="(00)00000-0000">
+                    <br>
+                    <label class="lbtxt" for="email">Email:</label>
+                    <br>
+                    <input type="email" id="email" name="email" placeholder="usuario@email.com">
                     <br>
                     <div class="btn-group">
-                        <button class="btn-form" id="env-senha">Enviar senha</button>
                         <button class="btn-form" id="excluir">Excluir</button>
                         <button class="btn-form" id="atualizar">Atualizar</button>
                     </div>
                 </div>
                 <div class="right">
-                    <label class="lbtxt" for="email">Email:</label>
-                    <br>
-                    <input type="email" id="email" placeholder="usuario@email.com">
-                    <br>
                     <label class="lbtxt" for="tipo-usuario">Tipo:</label>
                     <br>
-                    <select id="tipo-usuario">
-                        <option value="Tipo1">Tipo 1</option>
-                        <option value=Tipo2">Tipo 2</option>
+                    <select id="tipo-usuario" name="usuario">
+                        <option value="">Selecione um usuario..</option>
                     </select>
                     <br>
                     <label class="lbtxt" for="cliente">Cliente:</label>
                     <br>
-                    <select id="tipo-usuario">
-                        <option value="Cli1">Cliente 1</option>
-                        <option value=Cli2">Cliente 2</option>
+                    <select id="tipo-cliente" name="cliente">
+                        <option value="">Selecione um cliente..</option>
                     </select>
                     <br>
-                    <div class="btn-group">
-                        <input type="reset" value="Limpar">
-                        <input type="submit" id="btn-salvar" value="Salvar">
+                    <div class="btn-group2">
+                        <input type="reset" value="Limpar" class="btn2">
+                        <input type="submit" id="btn-salvar" name ="btn-salvar" value="Salvar" class="btn2">
                     </div>
                 </div>
             </form>
         </div>
         <br>
-            <div class="container-tabela">
+        <div class="container-tabela">
             <div class="barra-pesquisa">
                 <input type="text" placeholder="Pesquisar">
                 <button id="btn-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <br><br><br><br>
-            <table class="tabela">
+            <table class="tabela" id="tabela-dados">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>USUARIO</th>
-                        <th>SENHA</th>
                         <th>TELEFONE</th>
                         <th>EMAIL</th>
                         <th>TIPO</th>
                         <th>DATA</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Usuario 1</td>
-                        <td>********</td>
-                        <td>(00)00000-0000</td>
-                        <td>usuario@email.com</td>
-                        <td>Tipo 1</td>
-                        <td>00/00/00 00:00</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Usuario 2</td>
-                        <td>********</td>
-                        <td>(00)00000-0000</td>
-                        <td>usuario@email.com</td>
-                        <td>Tipo 1</td>
-                        <td>00/00/00 00:00</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Usuario 3</td>
-                        <td>********</td>
-                        <td>(00)00000-0000</td>
-                        <td>usuario@email.com</td>
-                        <td>Tipo 2</td>
-                        <td>00/00/00 00:00</td>
-                    </tr>
+                <tbody id="dados">
+                <!-- Conteúdo da tabela aqui -->    
                 </tbody>
             </table>
             </div>
     </div>
 </body>
 <script>
-    //Configurando animação do menu
-    const sidebar = document.querySelector('.sidebar');
-    const btnMenu = document.querySelector('#btn-menu');
-    const conteudoPrincipal = document.querySelector('.conteudo-principal');
+     // Configurando animação do menu
+    document.addEventListener("DOMContentLoaded", function() {
+        const sidebar = document.querySelector('.sidebar');
+        const btnMenu = document.querySelector('#btn-menu');
+        const conteudoPrincipal = document.querySelector('.conteudo-principal');
 
-    btnMenu.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-        conteudoPrincipal.classList.toggle('active');
+        // Verificando se o estado do menu foi armazenado no localStorage
+        const isMenuActive = localStorage.getItem('isMenuActive');
+        if (isMenuActive === 'true') {
+            sidebar.classList.add('active');
+            conteudoPrincipal.classList.add('active');
+        }
+
+        btnMenu.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            conteudoPrincipal.classList.toggle('active');
+
+            // Salvar o estado do menu no localStorage
+            const isActive = sidebar.classList.contains('active');
+            localStorage.setItem('isMenuActive', isActive);
+        });
     });
 </script>
 </html>

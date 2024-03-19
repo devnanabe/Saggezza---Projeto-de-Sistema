@@ -1,8 +1,9 @@
 <?php
+    
     define('HOST','localhost');
     define('USER', 'root');
     define('PASS', '');
-    define('BASE', 'sagezza');
+    define('BASE', 'saggezza');
 
     $conn = new MySQLi(HOST, USER, PASS, BASE);
 
@@ -10,4 +11,6 @@
     {
         exit("Erro ao se conectar com o banco de dados: " . $conn->connect_error);
     }
+    
 ?>
+

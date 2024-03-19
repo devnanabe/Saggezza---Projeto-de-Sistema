@@ -16,6 +16,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/png" href="../Imagens/logo-saggezza.png">
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../Js/cadmaquina.js"></script>
 </head>
 <body>
     <header>
@@ -103,47 +105,42 @@
     <div class="conteudo-principal">
         <div class="container-form">
             <h2 class="tituloform">Cadastrar máquina</h2>
-            <form action="" class="formulario">
+            <form method="POST" action="" id="formCadastroMaquina" class="formulario">
                 <div class="left">
-                    <label class="lbtxt" for="cliente-sel">Cliente:</label>
+                    <<label class="lbtxt" for="clienteSelect">Cliente:</label>
                     <br>
-                    <select id="cliente-sel">
-                        <option value="Cli1">Cliente 1</option>
-                        <option value=Cli2">Cliente 2</option>
+                    <select id="clienteSelect" name="cliente">
+                        <option value="">Selecione um cliente..</option>
                     </select>
                     <br>
-                    <label class="lbtxt" for="equipamento">Equipamento:</label>
+                    <label class="lbtxt" for="equipamentoSelect">Equipamento:</label>
                     <br>
-                    <select id="equipamento">
-                        <option value="Equip1">Equipamento 1</option>
-                        <option value="Equip2">Equipamento 2</option>
+                    <select id="equipamentoSelect" name="equipamento">
+                        <option value="">Selecione um equipamento..</option>
                     </select>
                     <br>
-                    <label class="lbtxt" for="tipomaq">Tipo:</label>
+                    <label class="lbtxt" for="maquinaSelect">Tipo:</label>
                     <br>
-                    <select id="tipomaq">
-                        <option value="Tipo1">Tipo 1</option>
-                        <option value="Tipo2">Tipo 2</option>
+                    <select id="maquinaSelect" name="maquina">
+                        <option value="">Selecione uma maquina..</option>
                     </select>
                 </div>
                 <div class="right">
-                    <label class="lbtxt" for="tipo-lub">Tipo de lubrificante:</label>
+                <label class="lbtxt" for="lubrificanteSelect">Tipo de lubrificante:</label>
                     <br>
-                    <select id="tipo-lub">
-                        <option value="Lub1">Lubrificante 1</option>
-                        <option value="Lub2">Lubrificante 2</option>
+                    <select id="lubrificanteSelect" name="lubrificante">
+                        <option value="">Selecione um lubrificante..</option>
                     </select>
                     <br>
-                    <label class="lbtxt" for="fabricante">Fabricante:</label>
+                    <label class="lbtxt" for="fabricanteSelect">Fabricante:</label>
                     <br>
-                    <select id="fabricante">
-                        <option value="Fab1">Fabricante 1</option>
-                        <option value="Fab2">Fabricante 2</option>
+                    <select id="fabricanteSelect" name="fabricante">
+                        <option value="">Selecione um fabricante..</option>
                     </select>
                     <br>
                     <div class="btn-group">
                         <input type="reset" value="Limpar">
-                        <input type="submit" id="btn-salvar" value="Salvar">
+                        <input type="submit" id="btn-salvar" name="btn-salvar" value="Salvar">
                     </div>
                 </div>
             </form>
@@ -151,56 +148,51 @@
             <br>
             <div class="container-tabela">
             <div class="barra-pesquisa">
-                <input type="text" placeholder="Pesquisar">
+                <input type="text" id="inputFiltro" placeholder="Pesquisar">
                 <button id="btn-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <br><br><br><br>
-                <table class="tabela">
+            <table class="tabela" id="tabela-dados">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>TIPO</th>
-                            <th>TIPO LUBRIFICANTE</th>
-                            <th>EQUIPAMENTO</th>
-                            <th>CLIENTE</th>
+                        <th>ID</th>
+                        <th>CLIENTE</th>
+                        <th>EQUIPAMENTO</th>
+                        <th>TIPO DE MAQUINA</th>
+                        <th>LUBRIFICANTE</th>
+                        <th>FABRICANTE</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Tipo 1</td>
-                            <td>Tipo Lub 1</td>
-                            <td>Equipamento 1</td>
-                            <td>Cliente 1</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Tipo 2</td>
-                            <td>Tipo Lub 2</td>
-                            <td>Equipamento 2</td>
-                            <td>Cliente 2</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Tipo 3</td>
-                            <td>Tipo Lub 3</td>
-                            <td>Equipamento 3</td>
-                            <td>Cliente 3</td>
-                        </tr>
+                    <tbody id="dados">
+                    <!-- Conteúdo da tabela aqui -->
                     </tbody>
                 </table>
             </div>
     </div>
+    <div id="resultado"></div>
 </body>
 <script>
-    //Configurando animação do menu
-    const sidebar = document.querySelector('.sidebar');
-    const btnMenu = document.querySelector('#btn-menu');
-    const conteudoPrincipal = document.querySelector('.conteudo-principal');
+     // Configurando animação do menu
+    document.addEventListener("DOMContentLoaded", function() {
+        const sidebar = document.querySelector('.sidebar');
+        const btnMenu = document.querySelector('#btn-menu');
+        const conteudoPrincipal = document.querySelector('.conteudo-principal');
 
-    btnMenu.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-        conteudoPrincipal.classList.toggle('active');
+        // Verificando se o estado do menu foi armazenado no localStorage
+        const isMenuActive = localStorage.getItem('isMenuActive');
+        if (isMenuActive === 'true') {
+            sidebar.classList.add('active');
+            conteudoPrincipal.classList.add('active');
+        }
+
+        btnMenu.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            conteudoPrincipal.classList.toggle('active');
+
+            // Salvar o estado do menu no localStorage
+            const isActive = sidebar.classList.contains('active');
+            localStorage.setItem('isMenuActive', isActive);
+        });
     });
 </script>
 </html>

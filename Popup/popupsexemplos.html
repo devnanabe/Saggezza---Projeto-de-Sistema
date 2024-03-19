@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos</title>
+    <link rel="icon" type="image/png" href="Imagens/logo-saggezza.png"> <!-- icone da página -->
+    <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script> <!-- Biblioteca de icones -->
+    <link rel="stylesheet" href="popup.css"> <!-- Necessário para qualquer página que contenha popups 
+                                            Quando for referenciar esse css em um arquivo de outra pasta, referenciar como "../Popup/popup.css"-->
+    <script src="popup.js"></script>
+</head>
+<body>
+    <main>
+        <button id="sucesso" class="botao" onclick="openPopupSucesso()">Sucesso</button>
+        <button id="erro" class="botao" onclick="openPopupErro()">Erro</button>
+        <button id="aviso" class="botao" onclick="openPopupAviso()">Aviso</button>
+        <button id="formulario" class="botao" onclick="openPopupForm()">Formulário</button>
+    </main>
+
+    <!-- POP UP DE SUCESSO -->
+    <div id="popup-sucesso" class="popup">
+        <div class="popup-content-sucesso">
+            <i class="fa-solid fa-circle-check icone-sucesso"></i> <!-- Icone -->
+            <h3 class="titulo-sucesso">Sucesso!</h3> <!-- Titulo -->
+            <p class="popup-txt">Mensagem aqui.</p> <!-- Texto -->
+            <br>
+            <button onclick="closePopupSucesso()" class="btn-popup-sucesso">Ok!</button> <!-- Fechar -->
+        </div>
+    </div>
+
+    <!-- POP UP DE ERRO -->
+    <div id="popup-erro" class="popup">
+        <div class="popup-content-erro">
+            <i class="fa-solid fa-circle-xmark icone-erro"></i> <!-- Icone -->
+            <h3 class="titulo-erro">Erro!</h3> <!-- Titulo -->
+            <p class="popup-txt">Mensagem aqui.</p> <!-- Texto -->
+            <br>
+            <button onclick="closePopupErro()" class="btn-popup-erro">Ok!</button> <!-- Fechar -->
+        </div>
+    </div>
+
+    <!-- POP UP DE AVISO -->
+    <div id="popup-aviso" class="popup">
+        <div class="popup-content-aviso">
+            <i class="fa-solid fa-triangle-exclamation icone-aviso"></i> <!-- Icone -->
+            <h3 class="titulo-aviso">Aviso!</h3> <!-- Titulo -->
+            <p class="popup-txt">Mensagem aqui.</p> <!-- Texto -->
+            <br>
+            <button onclick="closePopupAviso()" class="btn-popup-aviso">Ok!</button> <!-- Fechar -->
+        </div>
+    </div>
+
+    <!-- POP UP DE FORMULARIO - RECUPERAR SENHA -->
+    <div id="popup-form" class="popup">
+        <div class="popup-content-form">
+            <i class="fa-solid fa-circle-info icone-form"></i> <!-- Icone -->
+            <h3 class="titulo-form">Receba por email!</h3> <!-- Titulo -->
+            <p class="popup-txt">Insira seu email abaixo e receba sua senha</p> <!-- Texto -->
+            <input type="text" id="campo-form" placeholder="Email"> <!-- Campo a ser preenchido-->
+            <br>
+            <button type="submit" onclick="closePopupForm()" class="btn-popup-form">Enviar</button> <!-- Enviar e fechar -->
+        </div>
+    </div>
+</body>
+</html>

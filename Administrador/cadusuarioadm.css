@@ -261,6 +261,12 @@ select {
     align-items: center;
 }
 
+.btn-group2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .container-form select {
     background-color: #0B4983; 
     color: white; 
@@ -294,6 +300,29 @@ input[type="submit"],
         transform: translateX(3px);
     }
 
+    &:active {
+        background: #053664;
+    }
+}
+
+.btn2 {
+    width: 30%; 
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    height: 35px;
+    font-size: 16px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #09457C;
+    color: white;
+    transition: all 0.5s ease;
+
+    &:hover{
+        background: #0D62B0;
+        transform: translateX(3px);
+    }
     &:active {
         background: #053664;
     }

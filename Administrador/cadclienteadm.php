@@ -16,6 +16,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/png" href="../Imagens/logo-saggezza.png">
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../Js/cadclienteadm.js"></script>
 </head>
 <body>
     <header>
@@ -103,88 +105,78 @@
     <div class="conteudo-principal">
         <div class="container-form">
             <h2 class="tituloform">Cadastrar cliente</h2>
-            <form action="" class="formulario">
+            <form method="POST" action="" id="formCadastroCliente" class="formulario">
                 <div class="left">
                     <label class="lbtxt" for="nomecliente">Cliente:</label>
                     <br>
-                    <input type="text" placeholder="Nome do cliente" id="nomecliente">
+                    <input type="text" placeholder="Nome do cliente" id="nomecliente" name="nomecliente">
                     <br>
-                    <label class="lbtxt" for="responsavelcad">Responsável:</label>
+                    <label class="lbtxt" for="nomeresponsavel">Responsável:</label>
                     <br>
-                    <select id="responsavelcad">
-                        <option value="Adm1">Administrador 1</option>
-                        <option value="Op1">Operacional 1</option>
-                    </select>
+                    <input type="text" placeholder="Nome do responsável" id="nomeresponsavel" name="nomeresponsavel">
                 </div>
                 <div class="right">
                     <label class="lbtxt" for="telefonecliente">Telefone:</label>
                     <br>
-                    <input type="number" id="telefonecliente" placeholder="(00)00000-0000">
+                    <input type="number" id="telefonecliente" placeholder="(00)00000-0000" name="telefonecliente">
                     <br>
                     <label class="lbtxt" for="emailcliente">Email:</label>
                     <br>
-                    <input type="email" id="emailcliente" placeholder="cliente@email.com">
+                    <input type="email" id="emailcliente" placeholder="cliente@email.com" name="emailcliente">
                     <br>
                     <div class="btn-group">
                         <input type="reset" value="Limpar">
-                        <input type="submit" id="btn-salvar" value="Salvar">
+                        <input type="submit" id="btn-salvar" name="btn-salvar" value="Salvar">
                     </div>
                 </div>
             </form>
         </div>
         <br>
-            <div class="container-tabela">
+        <div class="container-tabela">
             <div class="barra-pesquisa">
-                <input type="text" placeholder="Pesquisar">
+                <input type="text" id="inputFiltro" placeholder="Pesquisar">
                 <button id="btn-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <br><br><br><br>
-                <table class="tabela">
-                    <thead>
+                <table class="tabela" id="tabela-dados">
+                <thead>
                         <tr>
                             <th>ID</th>
-                            <th>EMAIL</th>
                             <th>CLIENTE</th>
                             <th>TELEFONE</th>
                             <th>RESPONSÁVEL</th>
+                            <th>E-MAIL</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>cliente1@email.com</td>
-                            <td>Cliente 1</td>
-                            <td>(11) 1234-5678</td>
-                            <td>Administrador 1</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>cliente2@email.com</td>
-                            <td>Cliente 2</td>
-                            <td>(22) 2345-6789</td>
-                            <td>Operacional 1</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>cliente3@email.com</td>
-                            <td>Cliente 3</td>
-                            <td>(33) 3456-7890</td>
-                            <td>Administrador 1</td>
-                        </tr>
+                    <tbody id="dados">
+                    <!-- Conteúdo da tabela aqui -->
                     </tbody>
                 </table>
             </div>
     </div>
 </body>
 <script>
-    //Configurando animação do menu
-    const sidebar = document.querySelector('.sidebar');
-    const btnMenu = document.querySelector('#btn-menu');
-    const conteudoPrincipal = document.querySelector('.conteudo-principal');
+     // Configurando animação do menu
+    document.addEventListener("DOMContentLoaded", function() {
+        const sidebar = document.querySelector('.sidebar');
+        const btnMenu = document.querySelector('#btn-menu');
+        const conteudoPrincipal = document.querySelector('.conteudo-principal');
 
-    btnMenu.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-        conteudoPrincipal.classList.toggle('active');
+        // Verificando se o estado do menu foi armazenado no localStorage
+        const isMenuActive = localStorage.getItem('isMenuActive');
+        if (isMenuActive === 'true') {
+            sidebar.classList.add('active');
+            conteudoPrincipal.classList.add('active');
+        }
+
+        btnMenu.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            conteudoPrincipal.classList.toggle('active');
+
+            // Salvar o estado do menu no localStorage
+            const isActive = sidebar.classList.contains('active');
+            localStorage.setItem('isMenuActive', isActive);
+        });
     });
 </script>
 </html>

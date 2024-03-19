@@ -256,9 +256,8 @@ select {
 
 .btn-group {
     display: flex;
-    flex-direction: row; 
-    justify-content: flex-start; 
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .container-form select {
@@ -273,18 +272,16 @@ select {
 }
 
 input[type="reset"],
-input[type="submit"],
-.btn-form {
+input[type="submit"] {
     width: 30%; 
     padding: 10px;
     margin-bottom: 10px;
     border: none;
     height: 35px;
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     border-radius: 10px;
     cursor: pointer;
-    margin-left: 5px;
     background-color: #09457C;
     color: white;
     transition: all 0.5s ease;
@@ -341,12 +338,12 @@ input[type="submit"],
         width: 100%; 
     }
 }
+/* Botão adicionado por Jonatas*/
 .btn-white {
     background: transparent;
     text-decoration: none;
     color: rgb(255, 255, 255); 
 }
-
 /* ------- TABELA E BARRA DE PESQUISA ------- */
 
 .container-tabela {

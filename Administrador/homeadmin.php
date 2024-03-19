@@ -102,17 +102,31 @@
 
     <div class="conteudo-principal">
         <br><br><br>
+        <img src="../Imagens/logo-saggezza-titulo.png" alt="Logo Saggezza" class="img-fundo">
     </div>
 </body>
 <script>
-    //Configurando animação do menu
-    const sidebar = document.querySelector('.sidebar');
-    const btnMenu = document.querySelector('#btn-menu');
-    const conteudoPrincipal = document.querySelector('.conteudo-principal');
+     // Configurando animação do menu
+    document.addEventListener("DOMContentLoaded", function() {
+        const sidebar = document.querySelector('.sidebar');
+        const btnMenu = document.querySelector('#btn-menu');
+        const conteudoPrincipal = document.querySelector('.conteudo-principal');
 
-    btnMenu.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-        conteudoPrincipal.classList.toggle('active');
+        // Verificando se o estado do menu foi armazenado no localStorage
+        const isMenuActive = localStorage.getItem('isMenuActive');
+        if (isMenuActive === 'true') {
+            sidebar.classList.add('active');
+            conteudoPrincipal.classList.add('active');
+        }
+
+        btnMenu.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            conteudoPrincipal.classList.toggle('active');
+
+            // Salvar o estado do menu no localStorage
+            const isActive = sidebar.classList.contains('active');
+            localStorage.setItem('isMenuActive', isActive);
+        });
     });
 </script>
 </html>

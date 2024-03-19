@@ -143,10 +143,9 @@ select {
     width: 95%;
     margin: auto;
     min-height: 350px;
-    background: #EFF7FF; 
+    background: white;
     border-radius: 15px; 
     margin-top: 20px; 
-    border: 1px solid #0B4983;
 }
 
 .btn-group {

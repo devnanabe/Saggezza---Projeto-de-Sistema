@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: 500;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+  
+/* -------- POP DE SUCESSO --------- */
+.popup-content-sucesso {
+    background-color: #D6F8CD;
+    border-radius: 10px;
+    position: absolute;
+    border: 2px solid #2CA10E;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 260px;
+    transition: transform 300ms cubic-bezier(0.18,0.89,0.43,1.19);
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+}
+
+.icone-sucesso {
+    width: 70px;
+    height: 70px;
+    font-size: 70px;
+    color: #2CA10E;
+    margin-top: 10px;
+}
+  
+.titulo-sucesso {
+    font-size: 20px;
+    color: #2CA10E;
+    margin-top: 15px;
+    font-weight: 800;
+}
+
+.popup-txt {
+    padding: 5px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-weight: 16px;
+}
+
+.btn-popup-sucesso {
+    width: 70px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: none;
+    background: #2CA10E;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .3s ease;
+
+    &:hover {
+        background: #40C91C;
+    }
+
+    &:active {
+        background: #26930A;
+    }
+}
+
+/* -------- POP DE ERRO --------- */
+
+.popup-content-erro {
+    background-color: #FFECEC;
+    border-radius: 10px;
+    position: absolute;
+    border: 2px solid #A10E0E;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 260px;
+    transition: transform 300ms cubic-bezier(0.18,0.89,0.43,1.19);
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+}
+
+.icone-erro {
+    width: 70px;
+    height: 70px;
+    font-size: 70px;
+    color: #A10E0E;
+    margin-top: 10px;
+}
+  
+.titulo-erro {
+    font-size: 20px;
+    color: #A10E0E;
+    margin-top: 15px;
+    font-weight: 800;
+}
+
+.btn-popup-erro {
+    width: 70px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: none;
+    background: #A10E0E;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .3s ease;
+
+    &:hover {
+        background: #C81B1B;
+    }
+
+    &:active {
+        background: #A01313;
+    }
+}
+
+/* -------- POP DE AVISO --------- */
+
+.popup-content-aviso {
+    background-color: #FFF9D8;
+    border-radius: 10px;
+    position: absolute;
+    border: 2px solid #FFD700;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 260px;
+    transition: transform 300ms cubic-bezier(0.18,0.89,0.43,1.19);
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+}
+
+.icone-aviso {
+    width: 70px;
+    height: 70px;
+    font-size: 70px;
+    color: #FFD700;
+    margin-top: 10px;
+}
+  
+.titulo-aviso {
+    font-size: 20px;
+    color: #FFD700;
+    margin-top: 15px;
+    font-weight: 800;
+}
+
+.btn-popup-aviso {
+    width: 70px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: none;
+    background: #FFD700;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .3s ease;
+
+    &:hover {
+        background: #FEE03C;
+    }
+
+    &:active {
+        background: #E2C10C;
+    }
+}
+
+/* -------- POP DE FORMULARIO --------- */
+.popup-content-form {
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    border: 2px solid #09457C;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 300px;
+    transition: transform 300ms cubic-bezier(0.18,0.89,0.43,1.19);
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+}
+
+.icone-form {
+    width: 70px;
+    height: 70px;
+    font-size: 70px;
+    color: #09457C;
+    margin-top: 10px;
+}
+  
+.titulo-form {
+    font-size: 20px;
+    color: #09457C;
+    margin-top: 15px;
+    font-weight: 800;
+}
+
+#campo-form {
+    width: 330px;
+    height: 30px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    margin-top: 5px;
+    border: 1px solid #09457C;
+}
+
+.btn-popup-form {
+    width: 80px;
+    height: 30px;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: none;
+    background: #09457C;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .3s ease;
+
+    &:hover {
+        background: #0D62B0;
+    }
+
+    &:active {
+        background: #053664;
+    }
+}
+
+
+/* ------ CONFIGURANDO OS BOTOES DA PAGINA DE EXEMPLO ------- */
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.botao {
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    background: #053664;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin: auto;
+    margin-top: 10rem;
+    cursor: pointer;
+}
+
+

@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+:root {
+  --dark: #34495E;
+  --light: #ffffff;
+  --sucesso: #0ABF30;
+  --erro: #E24D4C;
+  --aviso: #E9BD0C;
+  --info: #3498DB;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--light);
+}
+
+.notificacoes {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+}
+
+.notificacoes :where(.popup, .column) {
+  display: flex;
+  align-items: center;
+}
+
+.notificacoes .popup {
+  width: 400px;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  border-radius: 4px;
+  padding: 16px 17px;
+  margin-bottom: 10px;
+  background: var(--light);
+  justify-content: space-between;
+  animation: show_popup 0.3s ease forwards;
+}
+
+@keyframes show_popup {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-5%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+.notificacoes .popup.hide {
+  animation: hide_popup 0.3s ease forwards;
+}
+
+@keyframes hide_popup {
+  0% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(calc(100% + 20px));
+  }
+}
+
+.popup::before {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+  100% {
+    width: 0%;
+  }
+}
+
+.popup.sucesso::before, .botao#sucesso {
+  background: var(--sucesso);
+}
+.popup.redefinir::before, .botao#redefinir {
+  background: var(--sucesso);
+}
+.popup.erro::before, .botao#erro {
+  background: var(--erro);
+}
+.popup.aviso::before, .botao#aviso {
+  background: var(--aviso);
+}
+.popup.info::before, .botao#info {
+  background: var(--info);
+}
+.popup .column i {
+  font-size: 1.75rem;
+}
+.popup.sucesso .column i {
+  color: var(--sucesso);
+}
+.popup.redefinir .column i {
+  color: var(--sucesso);
+}
+.popup.erro .column i {
+  color: var(--erro);
+}
+.popup.aviso .column i {
+  color: var(--aviso);
+}
+.popup.info .column i {
+  color: var(--info);
+}
+.popup .column span {
+  font-size: 1.07rem;
+  margin-left: 12px;
+}
+.popup i:last-child {
+  color: #aeb0d7;
+  cursor: pointer;
+}
+.popup i:last-child:hover {
+  color: var(--dark);
+}
+.btns .botao {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0 5px;
+  color: var(--light);
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 530px) {
+  .notificacoes {
+    width: 95%;
+  }
+  .notificacoes .popup {
+    width: 100%;
+    font-size: 1rem;
+    margin-left: 20px;
+  }
+  .btns .botao {
+    margin: 0 1px;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+  }
+}
