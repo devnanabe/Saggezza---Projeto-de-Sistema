@@ -16,13 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['clienteId']) && isset
         $stmtInsert->bind_param('iiiii', $equipamento, $cliente, $fabricante, $maquina, $lubrificante);
         $stmtInsert->execute();
 
-        // Verificar se a inserção foi bem-sucedida
-        if ($stmtInsert->affected_rows > 0) {
-            echo 'Máquina cadastrada com sucesso!';
-        } else {
-            echo 'Erro ao cadastrar máquina.';
-        }
-
         $stmtInsert->close(); // Fechar instrução preparada
     
 }else if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['tipo']) && $_GET['tipo'] === 'todos'){
@@ -141,6 +134,8 @@ $resultado = $stmt_select->get_result();
 while ($row = $resultado->fetch_assoc()) {
     echo '<tr><td>' . $row['ma_id'] . '</td><td>' . $row['cl_nome'] . '</td><td>' . $row['eq_nome'] . '</td><td>' . $row['tm_tipo'] . '</td><td>' . $row['lu_nome'] . '</td><td>' . $row['fa_nome'] . '</td></tr>';
 }
+
+//fechar o statement de select
 $stmt_select->close();
 }
 

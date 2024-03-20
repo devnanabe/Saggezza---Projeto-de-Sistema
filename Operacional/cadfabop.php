@@ -16,6 +16,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/png" href="../Imagens/logo-saggezza.png">
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../Js/cadfab.js"></script>
 </head>
 <body>
     <header>
@@ -97,18 +99,18 @@
     <div class="conteudo-principal">
         <div class="container-form">
             <h2 class="tituloform">Cadastrar fabricante</h2>
-            <form action="" class="formulario">
+            <form method="POST" action="" id="formCadastroFabricante" class="formulario">
                 <div class="left">
                     <label class="lbtxt" for="nome-fab">Fabricante:</label>
                     <br>
-                    <input type="text" id="nome-fab" placeholder="Nome do fabricante">
+                    <input type="text" id="nome-fab" name="nome-fab" placeholder="Nome do fabricante">
                     <br>
                 </div>
                 <div class="right">
                     <br>
                     <div class="btn-group">
                         <input type="reset" value="Limpar">
-                        <input type="submit" id="btn-salvar" value="Salvar">
+                        <input type="submit" id="btn-salvar" name="btn-salvar" value="Salvar">
                     </div>
                 </div>
             </form>
@@ -116,40 +118,21 @@
             <br>
             <div class="container-tabela">
             <div class="barra-pesquisa">
-                <input type="text" placeholder="Pesquisar">
+                <input type="text" id="inputFiltro" placeholder="Pesquisar">
                 <button id="btn-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <br><br><br><br>
-            <table class="tabela">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NOME DO FABRICANTE</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Fabricante 1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Fabricante 2</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Fabricante 3</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Fabricante 4</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Fabricante 5</td>
-                    </tr>
-                </tbody>
-            </table>
+                <table class="tabela" id="tabela-dados">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>FABRICANTE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dados">
+                    <!-- Conteúdo da tabela aqui -->
+                    </tbody>
+                </table>
             </div>
     </div>
 </body>

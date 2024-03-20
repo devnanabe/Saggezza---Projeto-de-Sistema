@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" href="../Imagens/logo-saggezza.png">
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../Js/reportarsinalizacaoadm.js"></script>
+    <script src="../Js/reportarsinalizacao.js"></script>
 </head>
 <body>
     <header>
@@ -105,33 +105,33 @@
     <div class="conteudo-principal">
         <div class="container-form">
             <h2 class="tituloform">Reportar sinalizações</h2>
-            <form action="" class="formulario">
+            <form method="POST" action="" class="formulario">
                 <div class="left">
-                <label class="lbtxt" for="cliente-sel">Cliente:</label>
+                <label class="lbtxt" for="clienteSelect">Cliente:</label>
                     <br>
-                    <select id="clienteSelect" name="cliente">
+                    <select id="clienteSelect" name="clienteSelect">
                         <option value="">Selecione um cliente..</option>
                     </select>
                     <br>
-                    <label class="lbtxt" for="equip-sel">Equipamento:</label>
+                    <label class="lbtxt" for="equipamentoSelect">Equipamento:</label>
                     <br>
-                    <select id="equipamentoSelect" name="equipamento">
+                    <select id="equipamentoSelect" name="equipamentoSelect">
                         <option value="">Selecione um equipamento..</option>
                     </select>
                     <br>
                     <label class="lbtxt" for="data">Data/Hora:</label>
                     <br>
-                    <input type="datetime-local" id="data">
+                    <input type="datetime-local" id="data" name="data">
                     <br>
                 </div>
                 <div class="right">
                     <label class="lbtxt" for="sinalizacao">Sinalização:</label>
                     <br>
-                    <textarea id="sinalizacao" placeholder="Escreva aqui..."></textarea>
+                    <textarea id="sinalizacao" name="sinalizacao" placeholder="Escreva aqui..."></textarea>
                     <br>
                     <div class="btn-group">
                         <input type="reset" value="Limpar">
-                        <input type="submit" id="btn-salvar" value="Salvar">
+                        <input type="submit" id="btn-salvar" name="btn-salvar" value="Salvar">
                     </div>
                 </div>
             </form>
@@ -139,7 +139,7 @@
         <br>
         <div class="container-tabela">
             <div class="barra-pesquisa">
-                <input type="text" id="inputFiltro" placeholder="Pesquisar">
+                <input type="text" id="inputFiltro" placeholder="Pesquisar" class="campopesquisar">
                 <button id="btn-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <br><br><br><br>
@@ -149,8 +149,8 @@
                         <th>ID</th>
                         <th>CLIENTE</th>
                         <th>EQUIPAMENTO</th>
-                        <th>DATA</th>
                         <th>SINALIZAÇÃO</th>
+                        <th>DATA</th>
                         </tr>
                     </thead>
                     <tbody id="dados">

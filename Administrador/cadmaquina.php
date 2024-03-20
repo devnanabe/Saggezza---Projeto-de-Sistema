@@ -107,34 +107,34 @@
             <h2 class="tituloform">Cadastrar máquina</h2>
             <form method="POST" action="" id="formCadastroMaquina" class="formulario">
                 <div class="left">
-                    <<label class="lbtxt" for="clienteSelect">Cliente:</label>
+                    <label class="lbtxt" for="clienteSelect">Cliente:</label>
                     <br>
-                    <select id="clienteSelect" name="cliente">
+                    <select id="clienteSelect" name="clienteSelect">
                         <option value="">Selecione um cliente..</option>
                     </select>
                     <br>
                     <label class="lbtxt" for="equipamentoSelect">Equipamento:</label>
                     <br>
-                    <select id="equipamentoSelect" name="equipamento">
+                    <select id="equipamentoSelect" name="equipamentoSelect">
                         <option value="">Selecione um equipamento..</option>
                     </select>
                     <br>
                     <label class="lbtxt" for="maquinaSelect">Tipo:</label>
                     <br>
-                    <select id="maquinaSelect" name="maquina">
+                    <select id="maquinaSelect" name="maquinaSelect">
                         <option value="">Selecione uma maquina..</option>
                     </select>
                 </div>
                 <div class="right">
                 <label class="lbtxt" for="lubrificanteSelect">Tipo de lubrificante:</label>
                     <br>
-                    <select id="lubrificanteSelect" name="lubrificante">
+                    <select id="lubrificanteSelect" name="lubrificanteSelect">
                         <option value="">Selecione um lubrificante..</option>
                     </select>
                     <br>
                     <label class="lbtxt" for="fabricanteSelect">Fabricante:</label>
                     <br>
-                    <select id="fabricanteSelect" name="fabricante">
+                    <select id="fabricanteSelect" name="fabricanteSelect">
                         <option value="">Selecione um fabricante..</option>
                     </select>
                     <br>

@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" href="../Imagens/logo-saggezza.png">
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../Js/cadusuarioadm.js"></script>
+    <script src="../Js/cadusuario.js"></script>
 </head>
 <body>
     <header>
@@ -105,7 +105,7 @@
     <div class="conteudo-principal">
         <div class="container-form">
             <h2 class="tituloform">Cadastrar usuário</h2>
-            <form method="POST" action="" id="formCadastroCliente" class="formulario">
+            <form method="POST" action="" id="formCadastroUsuario" class="formulario">
                 <div class="left">
                     <label class="lbtxt" for="username">Usuário:</label>
                     <br>
@@ -113,33 +113,35 @@
                     <br>
                     <label class="lbtxt" for="telefone">Telefone:</label>
                     <br>
-                    <input type="number" id="telefone" name="telefone" placeholder="(00)00000-0000">
+                    <input type="text" id="telefone" name="telefone" placeholder="(00)00000-0000">
                     <br>
                     <label class="lbtxt" for="email">Email:</label>
                     <br>
                     <input type="email" id="email" name="email" placeholder="usuario@email.com">
                     <br>
                     <div class="btn-group">
-                        <button class="btn-form" id="excluir">Excluir</button>
-                        <button class="btn-form" id="atualizar">Atualizar</button>
+                        <button class="btn-form" id="btn-excluir" name="btn-excluir">Excluir</button>
+                        <button class="btn-form" id="btn-atualizar" name="btn-atualizar">Atualizar</button>
                     </div>
                 </div>
                 <div class="right">
                     <label class="lbtxt" for="tipo-usuario">Tipo:</label>
                     <br>
-                    <select id="tipo-usuario" name="usuario">
+                    <select id="tipo-usuario" name="tipo-usuario">
                         <option value="">Selecione um usuario..</option>
                     </select>
                     <br>
-                    <label class="lbtxt" for="cliente">Cliente:</label>
+                    <label class="lbtxt" for="tipo-cliente">Cliente:</label>
                     <br>
-                    <select id="tipo-cliente" name="cliente">
+                    <select id="tipo-cliente" name="tipo-cliente">
                         <option value="">Selecione um cliente..</option>
                     </select>
                     <br>
                     <div class="btn-group2">
-                        <input type="reset" value="Limpar" class="btn2">
-                        <input type="submit" id="btn-salvar" name ="btn-salvar" value="Salvar" class="btn2">
+                        <input type="reset" id="btn-reset" name="btn-reset" value="Limpar" class="btn2">
+                        <input type="submit" id="btn-salvar" name="btn-salvar" value="Salvar" class="btn2">
+                        <input type="submit" name="btn-pagina" id="btn-pagina" value="Atualizar pagina" class="btn2">
+
                     </div>
                 </div>
             </form>
@@ -147,7 +149,7 @@
         <br>
         <div class="container-tabela">
             <div class="barra-pesquisa">
-                <input type="text" placeholder="Pesquisar">
+                <input type="text" id="inputFiltro" placeholder="Pesquisar">
                 <button id="btn-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <br><br><br><br>
@@ -159,6 +161,7 @@
                         <th>TELEFONE</th>
                         <th>EMAIL</th>
                         <th>TIPO</th>
+                        <th>CLIENTE</th>
                         <th>DATA</th>
                     </tr>
                 </thead>

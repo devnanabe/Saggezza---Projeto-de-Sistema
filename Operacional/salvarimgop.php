@@ -16,6 +16,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/png" href="../Imagens/logo-saggezza.png">
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../Js/salvarimg.js"></script>
 </head>
 <body>
     <header>
@@ -97,82 +99,60 @@
     <div class="conteudo-principal">
         <div class="container-form">
             <h2 class="tituloform">Salvar imagem</h2>
-            <form action="" class="formulario">
+            <form method="POST" id="formCadastroImagem" action="" enctype="multipart/form-data" class="formulario">
                 <div class="left">
-                    <label class="lbtxt" for="cliente-sel">Cliente:</label>
+                <label class="lbtxt" for="clienteSelect">Cliente:</label>
                     <br>
-                    <select id="cliente-sel">
-                        <option value="Cli1">Cliente 1</option>
-                        <option value=Cli2">Cliente 2</option>
+                    <select id="clienteSelect" name="clienteSelect">
+                        <option value="">Selecione um cliente..</option>
                     </select>
                     <br>
-                    <label class="lbtxt" for="equip-sel">Equipamento:</label>
+                    <label class="lbtxt" for="equipamentoSelect">Equipamento:</label>
                     <br>
-                    <select id="equip-sel">
-                        <option value="Cli1">Equipamento 1</option>
-                        <option value=Cli2">Equipamento 2</option>
+                    <select id="equipamentoSelect" name="equipamentoSelect">
+                        <option value="">Selecione um equipamento..</option>
                     </select>
                     <br>
                 </div>
                 <div class="right">
-                    <label class="lbtxt" for="valor">Upload do documento:</label>
+                    <label class="lbtxt" for="arquivo">Upload do documento:</label>
                     <br>
                     <div class="importar-img">
-                        <label class="txt-img">Nome do arquivo</label>
-                        <button id="btn-importar">Browse</button>
+                        <input type="file" name="arquivo" id="arquivo" accept="image/*" class="import-btn"></input>
                     </div>
                     <br>
                     <label class="lbtxt" for="data">Data/Hora:</label>
                     <br>
-                    <input type="datetime-local" id="data">
+                    <input type="datetime-local" id="data" name="data"></input>
                     <br>
                     <div class="btn-group">
                         <input type="reset" value="Limpar">
-                        <input type="submit" id="btn-salvar" value="Salvar">
+                        <input type="submit" id="btn-salvar" name="btn-salvar" value="Salvar">
                     </div>
                 </div>
             </form>
         </div>
         <br>
-            <div class="container-tabela">
+        <div class="container-tabela">
             <div class="barra-pesquisa">
-                <input type="text" placeholder="Pesquisar">
+                <input type="text" id="inputFiltro" placeholder="Pesquisar">
                 <button id="btn-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <br><br><br><br>
-                <table class="tabela">
+                <table class="tabela" id="tabela-dados">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>EMAIL</th>
                             <th>CLIENTE</th>
-                            <th>TELEFONE</th>
-                            <th>RESPONSÁVEL</th>
+                            <th>EQUIPAMENTO</th>
+                            <th>IMAGEM</th>
+                            <th>PATH</th>
+                            <th>DATA</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>cliente1@email.com</td>
-                            <td>Cliente 1</td>
-                            <td>(11) 1234-5678</td>
-                            <td>Administrador 1</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>cliente2@email.com</td>
-                            <td>Cliente 2</td>
-                            <td>(22) 2345-6789</td>
-                            <td>Operacional 1</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>cliente3@email.com</td>
-                            <td>Cliente 3</td>
-                            <td>(33) 3456-7890</td>
-                            <td>Administrador 1</td>
-                        </tr>
-                    </tbody>
+                    <tbody id="dados">
+                    <!-- Conteúdo da tabela aqui -->
+                    </tbody>    
                 </table>
             </div>
     </div>

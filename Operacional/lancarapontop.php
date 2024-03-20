@@ -16,6 +16,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/png" href="../Imagens/logo-saggezza.png">
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../Js/lancarapont.js"></script>
 </head>
 <body>
     <header>
@@ -99,92 +101,56 @@
             <h2 class="tituloform">Lançar apontamento</h2>
             <form action="" class="formulario">
                 <div class="left">
-                    <label class="lbtxt" for="cliente-sel">Cliente:</label>
+                <label class="lbtxt" for="clienteSelect">Cliente:</label>
                     <br>
-                    <select id="cliente-sel">
-                        <option value="Cli1">Cliente 1</option>
-                        <option value=Cli2">Cliente 2</option>
+                    <select id="clienteSelect" name="clienteSelect">
+                        <option value="">Selecione um cliente..</option>
                     </select>
                     <br>
-                    <label class="lbtxt" for="equip-sel">Equipamento:</label>
+                    <label class="lbtxt" for="equipamentoSelect">Equipamento:</label>
                     <br>
-                    <select id="equip-sel">
-                        <option value="Cli1">Equipamento 1</option>
-                        <option value=Cli2">Equipamento 2</option>
+                    <select id="equipamentoSelect" name="equipamentoSelect">
+                        <option value="">Selecione um equipamento..</option>
                     </select>
                     <br>
                 </div>
                 <div class="right">
-                    <label class="lbtxt" for="valor">Valor:</label>
+                <label class="lbtxt" for="valor">Valor:</label>
                     <br>
-                    <input type="number" id="valor" placeholder="Valor">
+                    <input type="number" id="valor" name="valor" placeholder="Valor" step="0.01" min="0">
                     <br>
                     <label class="lbtxt" for="data">Data/Hora:</label>
                     <br>
-                    <input type="datetime-local" id="data">
+                    <input type="datetime-local" id="data" name="data">
                     <br>
                     <div class="btn-group">
                         <input type="reset" value="Limpar">
-                        <input type="submit" id="btn-salvar" value="Salvar">
+                        <input type="submit" id="btn-salvar" name="btn-salvar" value="Salvar">
                     </div>
                 </div>
             </form>
         </div>
         <br>
-            <div class="container-tabela">
+        <div class="container-tabela">
             <div class="barra-pesquisa">
-                <input type="text" placeholder="Pesquisar">
+                <input type="text" id="inputFiltro" placeholder="Pesquisar">
                 <button id="btn-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <br><br><br><br>
-            <table class="tabela">
+            <table class="tabela" id="tabela-dados">
                 <thead>
-                    <tr>
+                        <tr>
                         <th>ID</th>
                         <th>CLIENTE</th>
                         <th>EQUIPAMENTO</th>
                         <th>DATA</th>
                         <th>VALOR</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Cliente 1</td>
-                        <td>Equipamento 1</td>
-                        <td>00/00/00 00:00</td>
-                        <td>000</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Cliente 2</td>
-                        <td>Equipamento 2</td>
-                        <td>00/00/00 00:00</td>
-                        <td>000</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Cliente 3</td>
-                        <td>Equipamento 3</td>
-                        <td>00/00/00 00:00</td>
-                        <td>000</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Cliente 4</td>
-                        <td>Equipamento 4</td>
-                        <td>00/00/00 00:00</td>
-                        <td>000</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Cliente 5</td>
-                        <td>Equipamento 5</td>
-                        <td>00/00/00 00:00</td>
-                        <td>000</td>
-                    </tr>
-                </tbody>
-            </table>
+                        </tr>
+                    </thead>
+                    <tbody id="dados">
+                    <!-- Conteúdo da tabela aqui -->
+                    </tbody>
+                </table>
             </div>
     </div>
 </body>

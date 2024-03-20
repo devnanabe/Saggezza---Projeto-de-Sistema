@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
 // Função para enviar o email
-function enviarEmail($destinatario_email, $novaSenha) {
+function enviarEmail($destinatario_email, $titulo, $body, $altbody) {
     $mail = new PHPMailer(true);
 
     try {
@@ -16,8 +16,8 @@ function enviarEmail($destinatario_email, $novaSenha) {
         $mail->SMTPSecure = 'tls';
         $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->Port = 2525;
-        $mail->Username = 'dc8eca15aee322';
-        $mail->Password = 'f134ab59796faf';
+        $mail->Username = '828033ee24173b';
+        $mail->Password = '44c6f9bb5cae5b';
 
         // Configurações do email
         $mail->setFrom('plataforma.saggezza@outlook.com', 'Suporte');
@@ -25,9 +25,9 @@ function enviarEmail($destinatario_email, $novaSenha) {
         $mail->isHTML(true);
 
         // Corpo do email
-        $mail->Subject = 'Recuperação de Senha';
-        $mail->Body    = 'Olá! Sua nova senha é: ' . $novaSenha . '<br><br>Com ela você terá acesso ao sistema.';
-        $mail->AltBody = 'Olá! Sua nova senha é: ' . $novaSenha . 'Com ela você terá acesso ao sistema.';
+        $mail->Subject = $titulo;
+        $mail->Body    = $body;
+        $mail->AltBody = $altbody;
 
         // Envie o email
         $mail->send();

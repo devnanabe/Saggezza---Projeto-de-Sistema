@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" href="../Imagens/logo-saggezza.png">
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../Js/salvarimgadm.js"></script>
+    <script src="../Js/salvarimg.js"></script>
 </head>
 <body>
     <header>
@@ -105,23 +105,23 @@
     <div class="conteudo-principal">
         <div class="container-form">
             <h2 class="tituloform">Salvar imagem</h2>
-            <form id="formCadastroImagem" action="" enctype="multipart/form-data" class="formulario">
+            <form method="POST" id="formCadastroImagem" action="" enctype="multipart/form-data" class="formulario">
                 <div class="left">
-                <label class="lbtxt" for="cliente-sel">Cliente:</label>
+                <label class="lbtxt" for="clienteSelect">Cliente:</label>
                     <br>
-                    <select id="clienteSelect" name="cliente">
+                    <select id="clienteSelect" name="clienteSelect">
                         <option value="">Selecione um cliente..</option>
                     </select>
                     <br>
-                    <label class="lbtxt" for="equip-sel">Equipamento:</label>
+                    <label class="lbtxt" for="equipamentoSelect">Equipamento:</label>
                     <br>
-                    <select id="equipamentoSelect" name="equipamento">
+                    <select id="equipamentoSelect" name="equipamentoSelect">
                         <option value="">Selecione um equipamento..</option>
                     </select>
                     <br>
                 </div>
                 <div class="right">
-                    <label class="lbtxt" for="valor">Upload do documento:</label>
+                    <label class="lbtxt" for="arquivo">Upload do documento:</label>
                     <br>
                     <div class="importar-img">
                         <input type="file" name="arquivo" id="arquivo" accept="image/*" class="import-btn"></input>

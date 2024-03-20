@@ -31,15 +31,16 @@ if(isset($_POST['enviar'])){
 
         if($resultado_update) {
             // Chame a função para enviar o email
-            if(enviarEmail($destinatario_email, $novaSenha)) {
-                echo 'E-mail enviado com sucesso.';
+            $titulo = "Recuperação de Senha";
+            $body = "Olá! Sua nova senha é: " . $novaSenha . "<br><br>Com ela você terá acesso ao sistema.";
+            $altbody = "Olá! Sua nova senha é: " . $novaSenha . "Com ela você terá acesso ao sistema.";
+            
+            if(enviarEmail($destinatario_email, $titulo, $body, $altbody)) {
                 print "<script>location.href='index.php';</script>";
             } else {
-                echo "Erro ao enviar email.";
                 print "<script>location.href= 'recuperar';</script>";
             }
         } else {
-            echo "Erro ao atualizar a senha no banco de dados.";
             print "<script>location.href= 'recuperar.php';</script>";
         }
     } else {

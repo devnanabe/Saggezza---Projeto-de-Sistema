@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" href="../Imagens/logo-saggezza.png">
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../Js/cadclienteadm.js"></script>
+    <script src="../Js/cadcliente.js"></script>
 </head>
 <body>
     <header>
@@ -118,7 +118,7 @@
                 <div class="right">
                     <label class="lbtxt" for="telefonecliente">Telefone:</label>
                     <br>
-                    <input type="number" id="telefonecliente" placeholder="(00)00000-0000" name="telefonecliente">
+                    <input type="text" id="telefonecliente" placeholder="(00)00000-0000" name="telefonecliente">
                     <br>
                     <label class="lbtxt" for="emailcliente">Email:</label>
                     <br>

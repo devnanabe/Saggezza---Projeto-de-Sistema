@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" href="../Imagens/logo-saggezza.png">
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../Js/cadequipadm.js"></script>
+    <script src="../Js/cadequip.js"></script>
 </head>
 <body>
     <header>

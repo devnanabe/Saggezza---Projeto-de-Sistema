@@ -8,6 +8,16 @@
     }
 
     include '../dbconnect.php'; // inclua o arquivo de conexão com o banco de dados
+
+    $nome = $_SESSION["nome"];
+    $query = "SELECT us_cliente FROM usuarios WHERE us_nome = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('s', $nome);
+    $stmt->execute();
+    $stmt->bind_result($id_cliente); // Associa o resultado da consulta à variável $id_cliente
+    $stmt->fetch();
+    $stmt->close();
+    
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +29,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/png" href="../Imagens/logo-saggezza.png">
     <script src="https://kit.fontawesome.com/f9ec6cbf8e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../Js/homecliente.js"></script>
 
     <!-- CONSTRUÇÃO DO GRÁFICO DE LINHA - GOOGLE CHARTS -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,7 +46,7 @@
                     FROM apontamentos a
                     INNER JOIN clientes c ON a.ap_cliente = c.cl_id
                     INNER JOIN equipamentos e ON a.ap_equipamento = e.eq_id
-                    WHERE c.cl_id = 2";
+                    WHERE c.cl_id = $id_cliente";
             $result=mysqli_query($conn,$query);
             while($data=mysqli_fetch_array($result)){
                 $date=htmlspecialchars($data['ap_data']); // Escapar para evitar problemas de formatação no JavaScript
@@ -99,20 +111,6 @@
         </div>
     </nav>
     <div class="container-grafico">
-        <div class="filtros">
-            <span class="filtro-txt">Equipamento:</span>
-            <select id="equipamento">
-                <option value="Equip1">Equipamento 1</option>
-                <option value="Equip2">Equipamento 2</option>
-            </select>
-            <span class="filtro-txt">Dados do(s):</span>
-            <select id="dados">
-                <option value="dias">Últimos 3 dias</option>
-                <option value="semana">Última semana</option>
-                <option value="meses">Últimos 3 meses</option>
-                <option value="ano">Último ano</option>
-            </select>
-        </div>
         <div class="grafico">
             <!-- CHAMANDO O GRÁFICO -->
             <div id="curve_chart" style="width: 100%%; 
@@ -121,43 +119,37 @@
                                         border: 2px solid #0B4983;"></div>
         </div>
         <div class="btn-group">
-            <button class="btn-baixar" id="baixarPDF">Baixar PDF</button>
-            <button class="btn-baixar" id="baixarCSV">Baixar CSV</button>
+            <button class="btn-baixar" id="baixarPDF" name="baixarPDF">Baixar PDF</button>
+            
+            <button class="btn-baixar" id="baixarCSV" name="baixarCSV">Baixar CSV</button>
         </div>
     </div>
     <div class="container-tabela">
         <br><br><br>
-        <table class="tabela">
-            <thead>
-                <tr>
-                    <th>CLIENTE</th>
-                    <th>EQUIPAMENTO</th>
-                    <th>DATA E HORA</th>
-                    <th>VALOR</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Cliente</td>
-                    <td>Equipamento 1</td>
-                    <td>00/00/00 00:00</td>
-                    <td>000</td>
-                </tr>
-                <tr>
-                    <td>Cliente</td>
-                    <td>Equipamento 2</td>
-                    <td>00/00/00 00:00</td>
-                    <td>000</td>
-                </tr>
-                <tr>
-                    <td>Cliente</td>
-                    <td>Equipamento 1</td>
-                    <td>00/00/00 00:00</td>
-                    <td>000</td>
-                </tr>
-            </tbody>
-        </table>
+                <table class="tabela" id="tabela-dados">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>CLIENTE</th>
+                            <th>EQUIPAMENTO</th>
+                            <th>DATA E HORA</th>
+                            <th>VALOR</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dados">
+                    <!-- Conteúdo da tabela aqui -->
+                    </tbody>
+                </table>
         <br><br>
     </div>
+    <script>
+        document.getElementById('baixarPDF').addEventListener('click', function() {
+        window.location.href = '../Php/relatorio.php';
+        });
+
+        document.getElementById('baixarCSV').addEventListener('click', function() {
+        window.location.href = '../Php/csv.php';
+        });
+    </script>
 </body>
 </html>
